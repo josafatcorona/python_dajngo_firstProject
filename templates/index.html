@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title_block %}
+  Vida Inteligente Blog
+{% endblock %}
+{% block body_block %}
+  <div class="jumbotron">
+    <h1>Bienvenidos a Vida Inteligente</h1>
+    <h3>Un especio donde podrás encontra información sobre gadgets/tecnología que te harán la vida más fácil, todo por buenos precios.</h3>
+    <span>My name is {{name}} and welcome to my blog</span>
+  </div>
+  <hr>
+  <br>
+  <div class="row">
+    <div class="col-lg-8">
+      <h4>Ultimas entradas</h4>
+      <img src="{% static "images/smartlife.jpg"%}" alt="Failed">
+      <img src="{% static "images/logo_smartlife.png"%}" alt="X">
+    </div>
+    <div class="col-lg-4">
+    <h4>Relacionado</h4>
+    <span>Aqui iran otras secciones secundarias</span>
+  </div>
+
+
+  </div>
+{% endblock %}

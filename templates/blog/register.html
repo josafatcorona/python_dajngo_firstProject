@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title_block %}
+  Registrar
+{% endblock %}
+{% block body_block %}
+  <div class="jumbotron">
+    <h1>Registrate para ser parte de la comunidad!</h1>
+    <h3>Un espacio donde podrás encontra información sobre gadgets/tecnología que te harán la vida más fácil, todo por buenos precios.</h3>
+    <span>My name is {{name}} and welcome to my blog</span>
+  </div>
+  <hr>
+  <br>
+  <div class="row">
+    <div class="col-lg-2">
+
+    </div>
+    <div class="col-lg-8">
+      <div class="jumbotron">
+        {% if registered %}
+        <h1>Thank you for registering!</h1>
+        {% else %}
+        <h1>Register Here!</h1>
+        <h3>Fill out the form</h3>
+        <form class="form"  method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+              {{ user_form.as_p }}
+            </div>
+            <hr>
+            <div class="mb-3">
+              {{ profile_form.as_p }}
+            </div>
+            <br>
+            <input class="btn btn-primary" type="submit" name="" value="Register">
+        </form>
+        {% endif %}
+      </div>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+  </div>
+{% endblock %}

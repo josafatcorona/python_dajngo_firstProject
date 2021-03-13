@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title_block %}
+  Login
+{% endblock %}
+{% block body_block %}
+  <div class="jumbotron">
+    <h1>Inicia sesión!</h1>
+  </div>
+  <hr>
+  <br>
+  <form class="form"  method="post">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <input type="text" name="username" placeholder='Username'>
+    <hr>
+    <label for="password">Password:</label>
+    <input type="password" name="password">
+    <br>
+    <input class="btn btn-primary" type="submit" name="login" value="Login">
+
+  </form>
+{% endblock %}
